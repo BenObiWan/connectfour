@@ -1,7 +1,8 @@
 package game.connectfour;
 
-import common.config.IConfigurationBranch;
 import game.config.IGameConfiguration;
+
+import common.config.IConfigurationBranch;
 
 /**
  * Configuration for the connect four game.

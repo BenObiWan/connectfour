@@ -1,12 +1,5 @@
 package game.connectfour.client;
 
-import game.connectfour.IConnectFourConfiguration;
-import game.connectfour.event.AbstractConnectFourGameEvent;
-import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
-import game.connectfour.event.ConnectFourGameEventType;
-
-import org.apache.log4j.Logger;
-
 import game.communication.IGameClient;
 import game.communication.IGameServer;
 import game.communication.event.ICommonGameEvent;
@@ -17,7 +10,13 @@ import game.communication.event.game.TurnTimeoutCmnEvent;
 import game.communication.event.game.UnauthorizedActionCmnEvent;
 import game.communication.event.game.UnsupportedActionCmnEvent;
 import game.communication.event.game.YourTurnCmnEvent;
+import game.connectfour.IConnectFourConfiguration;
+import game.connectfour.event.AbstractConnectFourGameEvent;
+import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
+import game.connectfour.event.ConnectFourGameEventType;
 import game.gameclient.AbstractClientSideGame;
+
+import org.apache.log4j.Logger;
 
 /**
  * Client side of the Connect Four game.

@@ -1,7 +1,7 @@
 package game.connectfour;
 
-import game.connectfour.server.ConnectFourServerGameCreator;
 import game.communication.IGameListDescription;
+import game.connectfour.server.ConnectFourServerGameCreator;
 import game.gameserver.IServerGameCreator;
 
 /**

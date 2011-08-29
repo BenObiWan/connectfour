@@ -1,14 +1,14 @@
 package game.connectfour.gui;
 
+import game.connectfour.ChangedConnectFourBox;
+import game.connectfour.ConnectFourBoard;
+
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JPanel;
 
 import org.apache.log4j.Logger;
-
-import game.connectfour.ChangedConnectFourBox;
-import game.connectfour.ConnectFourBoard;
 
 /**
  * Panel describing a Connect Four board.

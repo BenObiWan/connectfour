@@ -1,12 +1,5 @@
 package game.connectfour.server;
 
-import game.connectfour.IConnectFourConfiguration;
-import game.connectfour.action.AbstractConnectFourGameAction;
-import game.connectfour.action.ConnectFourGameActionType;
-import game.connectfour.action.PlayColumnConnectFourGameAction;
-
-import org.apache.log4j.Logger;
-
 import game.common.IGameDescription;
 import game.communication.IGameServer;
 import game.communication.action.ICommonGameAction;
@@ -14,8 +7,14 @@ import game.communication.action.IGameAction;
 import game.communication.action.IGameCtrlAction;
 import game.communication.action.InconsistentActionTypeException;
 import game.communication.action.game.EndTurnCmnAction;
+import game.connectfour.IConnectFourConfiguration;
+import game.connectfour.action.AbstractConnectFourGameAction;
+import game.connectfour.action.ConnectFourGameActionType;
+import game.connectfour.action.PlayColumnConnectFourGameAction;
 import game.gameserver.AbstractServerSideGame;
 import game.gameserver.IServerSidePlayer;
+
+import org.apache.log4j.Logger;
 
 /**
  * Server side ConnectFour game.
