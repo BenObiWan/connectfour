@@ -11,6 +11,7 @@ import game.communication.event.game.UnauthorizedActionCmnEvent;
 import game.communication.event.game.UnsupportedActionCmnEvent;
 import game.communication.event.game.YourTurnCmnEvent;
 import game.connectfour.IConnectFourConfiguration;
+import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.event.AbstractConnectFourGameEvent;
 import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
 import game.connectfour.event.ConnectFourGameEventType;
@@ -26,7 +27,7 @@ import org.apache.log4j.Logger;
  */
 public final class ConnectFourClientSideGame
 		extends
-		AbstractClientSideGame<AbstractConnectFourGameEvent, IConnectFourConfiguration>
+		AbstractClientSideGame<AbstractConnectFourGameEvent, IConnectFourPlayerConfiguration, IConnectFourConfiguration>
 {
 	/**
 	 * Logger object.

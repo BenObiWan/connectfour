@@ -1,11 +1,11 @@
 package game.connectfour.server;
 
+import game.common.IGameDescription;
+import game.communication.IGameClient;
 import game.connectfour.IConnectFourConfiguration;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.action.AbstractConnectFourGameAction;
 import game.connectfour.client.ConnectFourClientGameCreator;
-import game.common.IGameDescription;
-import game.communication.IGameClient;
 import game.gameserver.AbstractServerGameCreator;
 
 /**
@@ -34,6 +34,7 @@ public final class ConnectFourServerGameCreator
 	public IServerSideConnectFourPlayer createPlayer(
 			final IGameClient hostingClient, final int iPlayerId)
 	{
+		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
 		return new ServerSideConnectFourPlayerImpl(iPlayerId, hostingClient,
 				hostingClient.getName(), false, this, conf);
 	}
@@ -50,7 +51,15 @@ public final class ConnectFourServerGameCreator
 			final IGameClient hostingClient, final int iPlayerId,
 			final String strPlayerName)
 	{
+		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
 		return new ServerSideConnectFourPlayerImpl(iPlayerId, hostingClient,
 				strPlayerName, true, this, conf);
+	}
+
+	@Override
+	public IConnectFourPlayerConfiguration createPlayerConfiguration()
+	{
+		// TODO createPlayerConfiguration
+		return null;
 	}
 }

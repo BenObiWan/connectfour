@@ -8,6 +8,7 @@ import game.communication.action.IGameCtrlAction;
 import game.communication.action.InconsistentActionTypeException;
 import game.communication.action.game.EndTurnCmnAction;
 import game.connectfour.IConnectFourConfiguration;
+import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.action.AbstractConnectFourGameAction;
 import game.connectfour.action.ConnectFourGameActionType;
 import game.connectfour.action.PlayColumnConnectFourGameAction;
@@ -24,7 +25,7 @@ import org.apache.log4j.Logger;
  */
 public final class ConnectFourServerSideGame
 		extends
-		AbstractServerSideGame<AbstractConnectFourGameAction, IConnectFourConfiguration, IServerSideConnectFourPlayer>
+		AbstractServerSideGame<AbstractConnectFourGameAction, IConnectFourConfiguration, IConnectFourPlayerConfiguration, IServerSideConnectFourPlayer>
 {
 	/**
 	 * Logger object.
@@ -61,7 +62,7 @@ public final class ConnectFourServerSideGame
 	}
 
 	@Override
-	public void handleGameAction(final IServerSidePlayer player,
+	public void handleGameAction(final IServerSidePlayer<?> player,
 			final IGameAction act) throws InconsistentActionTypeException
 	{
 		if (player instanceof IServerSideConnectFourPlayer)
@@ -155,7 +156,7 @@ public final class ConnectFourServerSideGame
 	}
 
 	@Override
-	public void handleAction(final IServerSidePlayer player,
+	public void handleAction(final IServerSidePlayer<?> player,
 			final EndTurnCmnAction act)
 	{
 		// TODO ConnectFourServerSideGame handleAction
@@ -169,7 +170,7 @@ public final class ConnectFourServerSideGame
 	}
 
 	@Override
-	public void handleGameCtrlAction(final IServerSidePlayer player,
+	public void handleGameCtrlAction(final IServerSidePlayer<?> player,
 			final IGameCtrlAction act) throws InconsistentActionTypeException
 	{
 		// TODO Auto-generated method stub
