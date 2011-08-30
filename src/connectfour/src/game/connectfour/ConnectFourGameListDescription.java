@@ -38,4 +38,10 @@ public final class ConnectFourGameListDescription implements
 		return new ConnectFourServerGameCreator();
 	}
 
+	@Override
+	public int compareTo(IGameListDescription description)
+	{
+		return getName().compareTo(description.getName());
+	}
+
 }
