@@ -1,8 +1,6 @@
 package game.connectfour;
 
 import game.communication.IGameListDescription;
-import game.connectfour.server.ConnectFourServerGameCreator;
-import game.gameserver.IServerGameCreator;
 
 /**
  * Description of the connect four in the list of game available in the
@@ -33,15 +31,13 @@ public final class ConnectFourGameListDescription implements
 	}
 
 	@Override
-	public IServerGameCreator<?, ?, ?, ?, ?> createServerGameCreator()
+	public int compareTo(final IGameListDescription description)
 	{
-		return new ConnectFourServerGameCreator();
+		int iRes = getName().compareTo(description.getName());
+		if (iRes == 0)
+		{
+			iRes = getVersion().compareTo(description.getVersion());
+		}
+		return iRes;
 	}
-
-	@Override
-	public int compareTo(IGameListDescription description)
-	{
-		return getName().compareTo(description.getName());
-	}
-
 }
