@@ -1,18 +1,27 @@
 package game.connectfour.client;
 
 import game.communication.IGameServer;
+import game.communication.event.CommonGameEventType;
 import game.communication.event.ICommonGameEvent;
 import game.communication.event.IGameEvent;
+import game.communication.event.InconsistentEventTypeException;
+import game.communication.event.game.CantActCmnEvent;
+import game.communication.event.game.TurnTimeoutCmnEvent;
+import game.communication.event.game.UnauthorizedActionCmnEvent;
+import game.communication.event.game.UnsupportedActionCmnEvent;
+import game.communication.event.game.YourTurnCmnEvent;
 import game.connectfour.ConnectFourBox;
 import game.connectfour.IConnectFourConfiguration;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.event.AbstractConnectFourGameEvent;
+import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
+import game.connectfour.event.ConnectFourGameEventType;
 import game.gameclient.AbstractClientSidePlayer;
 import game.gameclient.LocalGameClient;
 
 public abstract class AbstractConnectFourClientSidePlayer
 		extends
-		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IClientSideConnectFourPlayer, IConnectFourPlayerConfiguration>
+		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IClientSideConnectFourPlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
 		implements IClientSideConnectFourPlayer
 {
 
@@ -37,6 +46,7 @@ public abstract class AbstractConnectFourClientSidePlayer
 
 	@Override
 	public void handleGameEvent(final IGameEvent evt)
+			throws InconsistentEventTypeException
 	{
 		if (evt instanceof ICommonGameEvent)
 		{
@@ -50,7 +60,7 @@ public abstract class AbstractConnectFourClientSidePlayer
 		}
 		else
 		{
-			// TODO
+			// _gameServer.handleAction(this, act)
 		}
 	}
 
@@ -59,20 +69,69 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * 
 	 * @param evt
 	 *            the {@link ICommonGameEvent} to handle.
+	 * @throws InconsistentEventTypeException
+	 *             the type field of the {@link AbstractConnectFourGameEvent}
+	 *             and it's class are inconsistent.
 	 */
 	private void handleCommonGameEvent(final ICommonGameEvent evt)
+			throws InconsistentEventTypeException
 	{
 		switch (evt.getType())
 		{
 		case YOUR_TURN:
+			if (evt instanceof YourTurnCmnEvent)
+			{
+				handleYourTurnCmnEvent((YourTurnCmnEvent) evt);
+			}
+			else
+			{
+				throw new InconsistentEventTypeException(
+						CommonGameEventType.YOUR_TURN, evt.getClass());
+			}
 			break;
 		case TURN_TIMEOUT:
+			if (evt instanceof TurnTimeoutCmnEvent)
+			{
+				handleTurnTimeoutCmnEvent((TurnTimeoutCmnEvent) evt);
+			}
+			else
+			{
+				throw new InconsistentEventTypeException(
+						CommonGameEventType.TURN_TIMEOUT, evt.getClass());
+			}
 			break;
 		case UNAUTHORIZED_ACTION:
+			if (evt instanceof UnauthorizedActionCmnEvent)
+			{
+				handleTurnTimeoutCmnEvent((UnauthorizedActionCmnEvent) evt);
+			}
+			else
+			{
+				throw new InconsistentEventTypeException(
+						CommonGameEventType.UNAUTHORIZED_ACTION, evt.getClass());
+			}
 			break;
 		case CANT_ACT:
+			if (evt instanceof CantActCmnEvent)
+			{
+				handleCanActCmnEvent((CantActCmnEvent) evt);
+			}
+			else
+			{
+				throw new InconsistentEventTypeException(
+						CommonGameEventType.CANT_ACT, evt.getClass());
+			}
 			break;
 		case UNSUPPORTED_ACTION:
+			if (evt instanceof UnsupportedActionCmnEvent)
+			{
+				handleUnsupportedActionCmnEvent((UnsupportedActionCmnEvent) evt);
+			}
+			else
+			{
+				throw new InconsistentEventTypeException(
+						CommonGameEventType.UNSUPPORTED_ACTION, evt.getClass());
+			}
 			break;
 		}
 	}
@@ -82,13 +141,26 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * 
 	 * @param evt
 	 *            the {@link AbstractConnectFourGameEvent} to handle.
+	 * @throws InconsistentEventTypeException
+	 *             the type field of the {@link AbstractConnectFourGameEvent}
+	 *             and it's class are inconsistent.
 	 */
 	private void handleConnectFourGameEvent(
 			final AbstractConnectFourGameEvent evt)
+			throws InconsistentEventTypeException
 	{
 		switch (evt.getType())
 		{
 		case COLUMN_PLAYED:
+			if (evt instanceof ColumnPlayedConnectFourGameEvent)
+			{
+				handleColumnPlayedConnectFourGameEvent((ColumnPlayedConnectFourGameEvent) evt);
+			}
+			else
+			{
+				throw new InconsistentEventTypeException(
+						ConnectFourGameEventType.COLUMN_PLAYED, evt.getClass());
+			}
 			break;
 		}
 	}
@@ -105,4 +177,56 @@ public abstract class AbstractConnectFourClientSidePlayer
 			return _playerConf.getBoxId();
 		}
 	}
+
+	/**
+	 * Handle a {@link YourTurnCmnEvent}.
+	 * 
+	 * @param evt
+	 *            the {@link YourTurnCmnEvent} to handle.
+	 */
+	protected abstract void handleYourTurnCmnEvent(final YourTurnCmnEvent evt);
+
+	/**
+	 * Handle a {@link TurnTimeoutCmnEvent}.
+	 * 
+	 * @param evt
+	 *            the {@link TurnTimeoutCmnEvent} to handle.
+	 */
+	protected abstract void handleTurnTimeoutCmnEvent(TurnTimeoutCmnEvent evt);
+
+	/**
+	 * Handle a {@link UnauthorizedActionCmnEvent}.
+	 * 
+	 * @param evt
+	 *            the {@link UnauthorizedActionCmnEvent} to handle.
+	 */
+	protected abstract void handleTurnTimeoutCmnEvent(
+			UnauthorizedActionCmnEvent evt);
+
+	/**
+	 * Handle a {@link CantActCmnEvent}.
+	 * 
+	 * @param evt
+	 *            the {@link CantActCmnEvent} to handle.
+	 */
+	protected abstract void handleCanActCmnEvent(CantActCmnEvent evt);
+
+	/**
+	 * Handle a {@link UnsupportedActionCmnEvent}.
+	 * 
+	 * @param evt
+	 *            the {@link UnsupportedActionCmnEvent} to handle.
+	 */
+	protected abstract void handleUnsupportedActionCmnEvent(
+			UnsupportedActionCmnEvent evt);
+
+	/**
+	 * Handle a {@link ColumnPlayedConnectFourGameEvent}.
+	 * 
+	 * @param evt
+	 *            the {@link ColumnPlayedConnectFourGameEvent} to handle.
+	 */
+	protected abstract void handleColumnPlayedConnectFourGameEvent(
+			ColumnPlayedConnectFourGameEvent evt);
+
 }
