@@ -19,7 +19,7 @@ import game.connectfour.event.ConnectFourGameEventType;
 import game.gameclient.AbstractClientSidePlayer;
 import game.gameclient.LocalGameClient;
 
-public abstract class AbstractConnectFourClientSidePlayer
+public final class ConnectFourClientSidePlayer
 		extends
 		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IClientSideConnectFourPlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
 		implements IClientSideConnectFourPlayer
@@ -37,7 +37,7 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param localGameClient
 	 *            the {@link LocalGameClient}.
 	 */
-	protected AbstractConnectFourClientSidePlayer(final int iPlayerId,
+	protected ConnectFourClientSidePlayer(final int iPlayerId,
 			final String strName, final IGameServer server,
 			final LocalGameClient localGameClient)
 	{
@@ -184,7 +184,13 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param evt
 	 *            the {@link YourTurnCmnEvent} to handle.
 	 */
-	protected abstract void handleYourTurnCmnEvent(final YourTurnCmnEvent evt);
+	private void handleYourTurnCmnEvent(final YourTurnCmnEvent evt)
+	{
+		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
+		{
+			observer.handleYourTurnCmnEvent(evt);
+		}
+	}
 
 	/**
 	 * Handle a {@link TurnTimeoutCmnEvent}.
@@ -192,7 +198,13 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param evt
 	 *            the {@link TurnTimeoutCmnEvent} to handle.
 	 */
-	protected abstract void handleTurnTimeoutCmnEvent(TurnTimeoutCmnEvent evt);
+	private void handleTurnTimeoutCmnEvent(final TurnTimeoutCmnEvent evt)
+	{
+		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
+		{
+			observer.handleTurnTimeoutCmnEvent(evt);
+		}
+	}
 
 	/**
 	 * Handle a {@link UnauthorizedActionCmnEvent}.
@@ -200,8 +212,13 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param evt
 	 *            the {@link UnauthorizedActionCmnEvent} to handle.
 	 */
-	protected abstract void handleTurnTimeoutCmnEvent(
-			UnauthorizedActionCmnEvent evt);
+	private void handleTurnTimeoutCmnEvent(final UnauthorizedActionCmnEvent evt)
+	{
+		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
+		{
+			observer.handleTurnTimeoutCmnEvent(evt);
+		}
+	}
 
 	/**
 	 * Handle a {@link CantActCmnEvent}.
@@ -209,7 +226,13 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param evt
 	 *            the {@link CantActCmnEvent} to handle.
 	 */
-	protected abstract void handleCanActCmnEvent(CantActCmnEvent evt);
+	private void handleCanActCmnEvent(final CantActCmnEvent evt)
+	{
+		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
+		{
+			observer.handleCanActCmnEvent(evt);
+		}
+	}
 
 	/**
 	 * Handle a {@link UnsupportedActionCmnEvent}.
@@ -217,8 +240,14 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param evt
 	 *            the {@link UnsupportedActionCmnEvent} to handle.
 	 */
-	protected abstract void handleUnsupportedActionCmnEvent(
-			UnsupportedActionCmnEvent evt);
+	private void handleUnsupportedActionCmnEvent(
+			final UnsupportedActionCmnEvent evt)
+	{
+		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
+		{
+			observer.handleUnsupportedActionCmnEvent(evt);
+		}
+	}
 
 	/**
 	 * Handle a {@link ColumnPlayedConnectFourGameEvent}.
@@ -226,7 +255,12 @@ public abstract class AbstractConnectFourClientSidePlayer
 	 * @param evt
 	 *            the {@link ColumnPlayedConnectFourGameEvent} to handle.
 	 */
-	protected abstract void handleColumnPlayedConnectFourGameEvent(
-			ColumnPlayedConnectFourGameEvent evt);
-
+	private void handleColumnPlayedConnectFourGameEvent(
+			final ColumnPlayedConnectFourGameEvent evt)
+	{
+		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
+		{
+			observer.handleColumnPlayedConnectFourGameEvent(evt);
+		}
+	}
 }
