@@ -14,7 +14,7 @@ import game.gameclient.IClientSidePlayer;
  */
 public interface IClientSideConnectFourPlayer
 		extends
-		IClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration>,
+		IClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>,
 		IConnectFourPlayer
 {
 	// TODO IClientSideConnectFourPlayer

@@ -13,7 +13,7 @@ import game.gameclient.AbstractClientGameCreator;
  */
 public final class ConnectFourClientGameCreator
 		extends
-		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IClientSideConnectFourPlayer>
+		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IClientSideConnectFourPlayer, IConnectFourClientSidePlayerObserver>
 {
 	@Override
 	public ConnectFourClientSideGame createGame()

@@ -31,7 +31,7 @@ public final class ConnectFourGameSwingLauncher implements IGameSwingLauncher
 
 	@Override
 	public JInternalFrame createGameUI(
-			final IClientGameCreator<?, ?, ?, ?, ?> creator)
+			final IClientGameCreator<?, ?, ?, ?, ?, ?> creator)
 	{
 		// TODO createGameUI
 		return null;
@@ -44,7 +44,7 @@ public final class ConnectFourGameSwingLauncher implements IGameSwingLauncher
 	}
 
 	@Override
-	public Class<? extends IClientGameCreator<?, ?, ?, ?, ?>> getIClientGameCreatorClass()
+	public Class<? extends IClientGameCreator<?, ?, ?, ?, ?, ?>> getIClientGameCreatorClass()
 	{
 		return ConnectFourClientGameCreator.class;
 	}
