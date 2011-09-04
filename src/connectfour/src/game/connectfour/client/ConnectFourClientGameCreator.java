@@ -27,12 +27,4 @@ public final class ConnectFourClientGameCreator
 	{
 		return null;
 	}
-
-	@Override
-	public void setConfiguration(
-			final IConnectFourConfiguration gameConfiguration)
-	{
-		// TODO Auto-generated method stub
-
-	}
 }
