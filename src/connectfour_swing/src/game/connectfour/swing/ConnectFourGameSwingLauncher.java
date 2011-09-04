@@ -1,4 +1,4 @@
-package game.connectfour.gui;
+package game.connectfour.swing;
 
 import game.communication.IGameListDescription;
 import game.communication.IGameSwingLauncher;

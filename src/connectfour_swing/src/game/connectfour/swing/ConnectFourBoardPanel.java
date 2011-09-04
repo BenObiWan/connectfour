@@ -1,4 +1,4 @@
-package game.connectfour.gui;
+package game.connectfour.swing;
 
 import game.connectfour.ChangedConnectFourBox;
 import game.connectfour.ConnectFourBoard;

@@ -1,4 +1,4 @@
-package game.connectfour.gui;
+package game.connectfour.swing;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

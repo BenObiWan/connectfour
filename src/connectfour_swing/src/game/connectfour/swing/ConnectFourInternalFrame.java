@@ -1,4 +1,4 @@
-package game.connectfour.gui;
+package game.connectfour.swing;
 
 import javax.swing.JInternalFrame;
 
