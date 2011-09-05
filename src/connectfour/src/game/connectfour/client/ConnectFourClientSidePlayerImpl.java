@@ -19,7 +19,7 @@ import game.connectfour.event.ConnectFourGameEventType;
 import game.gameclient.AbstractClientSidePlayer;
 import game.gameclient.LocalGameClient;
 
-public final class ConnectFourClientSidePlayer
+public final class ConnectFourClientSidePlayerImpl
 		extends
 		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourClientSidePlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
 		implements IConnectFourClientSidePlayer
@@ -37,7 +37,7 @@ public final class ConnectFourClientSidePlayer
 	 * @param localGameClient
 	 *            the {@link LocalGameClient}.
 	 */
-	protected ConnectFourClientSidePlayer(final int iPlayerId,
+	protected ConnectFourClientSidePlayerImpl(final int iPlayerId,
 			final String strName, final IGameServer server,
 			final LocalGameClient localGameClient)
 	{

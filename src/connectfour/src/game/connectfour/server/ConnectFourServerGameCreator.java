@@ -35,7 +35,7 @@ public final class ConnectFourServerGameCreator
 			final IGameClient hostingClient, final int iPlayerId)
 	{
 		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
-		return new ConnectFourPlayerServerSideImpl(iPlayerId, hostingClient,
+		return new ConnectFourServerSidePlayerImpl(iPlayerId, hostingClient,
 				hostingClient.getName(), false, this, conf);
 	}
 
@@ -52,7 +52,7 @@ public final class ConnectFourServerGameCreator
 			final String strPlayerName)
 	{
 		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
-		return new ConnectFourPlayerServerSideImpl(iPlayerId, hostingClient,
+		return new ConnectFourServerSidePlayerImpl(iPlayerId, hostingClient,
 				strPlayerName, true, this, conf);
 	}
 

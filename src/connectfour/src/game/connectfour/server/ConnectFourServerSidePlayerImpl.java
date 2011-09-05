@@ -6,7 +6,7 @@ import game.connectfour.IConnectFourPlayerConfiguration;
 import game.gameserver.AbstractServerSidePlayer;
 import game.gameserver.IServerGameCreator;
 
-public final class ConnectFourPlayerServerSideImpl extends
+public final class ConnectFourServerSidePlayerImpl extends
 		AbstractServerSidePlayer<IConnectFourPlayerConfiguration> implements
 		IConnectFourServerSidePlayer
 {
@@ -26,7 +26,7 @@ public final class ConnectFourPlayerServerSideImpl extends
 	 * @param conf
 	 *            the player configuration.
 	 */
-	public ConnectFourPlayerServerSideImpl(final int iPlayerId,
+	public ConnectFourServerSidePlayerImpl(final int iPlayerId,
 			final IGameClient hostingClient, final String strName,
 			final boolean bIsAI,
 			final IServerGameCreator<?, ?, ?, ?, ?> serverGameCreator,
