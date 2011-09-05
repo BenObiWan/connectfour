@@ -13,7 +13,7 @@ import game.gameclient.AbstractClientGameCreator;
  */
 public final class ConnectFourClientGameCreator
 		extends
-		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IClientSideConnectFourPlayer, IConnectFourClientSidePlayerObserver>
+		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayer, IConnectFourClientSidePlayerObserver>
 {
 	@Override
 	public ConnectFourClientSideGame createGame()
@@ -23,7 +23,7 @@ public final class ConnectFourClientGameCreator
 	}
 
 	@Override
-	public IClientSideConnectFourPlayer createPlayer(final int iPlayerId)
+	public IConnectFourClientSidePlayer createPlayer(final int iPlayerId)
 	{
 		return null;
 	}

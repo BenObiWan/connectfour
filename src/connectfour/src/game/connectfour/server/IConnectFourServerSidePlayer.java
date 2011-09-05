@@ -10,7 +10,7 @@ import game.gameserver.IServerSidePlayer;
  * @author benobiwan
  * 
  */
-public interface IServerSideConnectFourPlayer extends
+public interface IConnectFourServerSidePlayer extends
 		IServerSidePlayer<IConnectFourPlayerConfiguration>, IConnectFourPlayer
 {
 	// TODO IServerSideConnectFourPlayer

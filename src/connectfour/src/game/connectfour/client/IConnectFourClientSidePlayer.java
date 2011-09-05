@@ -12,7 +12,7 @@ import game.gameclient.IClientSidePlayer;
  * @author benobiwan
  * 
  */
-public interface IClientSideConnectFourPlayer
+public interface IConnectFourClientSidePlayer
 		extends
 		IClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>,
 		IConnectFourPlayer

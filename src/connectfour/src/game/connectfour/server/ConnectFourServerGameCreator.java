@@ -16,7 +16,7 @@ import game.gameserver.AbstractServerGameCreator;
  */
 public final class ConnectFourServerGameCreator
 		extends
-		AbstractServerGameCreator<IConnectFourPlayerConfiguration, AbstractConnectFourGameAction, IConnectFourConfiguration, IServerSideConnectFourPlayer, ConnectFourServerSideGame>
+		AbstractServerGameCreator<IConnectFourPlayerConfiguration, AbstractConnectFourGameAction, IConnectFourConfiguration, IConnectFourServerSidePlayer, ConnectFourServerSideGame>
 {
 	@Override
 	public ConnectFourServerSideGame createGame()
@@ -31,11 +31,11 @@ public final class ConnectFourServerGameCreator
 	}
 
 	@Override
-	public IServerSideConnectFourPlayer createPlayer(
+	public IConnectFourServerSidePlayer createPlayer(
 			final IGameClient hostingClient, final int iPlayerId)
 	{
 		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
-		return new ServerSideConnectFourPlayerImpl(iPlayerId, hostingClient,
+		return new ConnectFourPlayerServerSideImpl(iPlayerId, hostingClient,
 				hostingClient.getName(), false, this, conf);
 	}
 
@@ -47,12 +47,12 @@ public final class ConnectFourServerGameCreator
 	}
 
 	@Override
-	public IServerSideConnectFourPlayer createAI(
+	public IConnectFourServerSidePlayer createAI(
 			final IGameClient hostingClient, final int iPlayerId,
 			final String strPlayerName)
 	{
 		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
-		return new ServerSideConnectFourPlayerImpl(iPlayerId, hostingClient,
+		return new ConnectFourPlayerServerSideImpl(iPlayerId, hostingClient,
 				strPlayerName, true, this, conf);
 	}
 

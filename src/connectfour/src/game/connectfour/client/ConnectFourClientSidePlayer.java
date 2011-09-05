@@ -21,8 +21,8 @@ import game.gameclient.LocalGameClient;
 
 public final class ConnectFourClientSidePlayer
 		extends
-		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IClientSideConnectFourPlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
-		implements IClientSideConnectFourPlayer
+		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourClientSidePlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
+		implements IConnectFourClientSidePlayer
 {
 
 	/**
