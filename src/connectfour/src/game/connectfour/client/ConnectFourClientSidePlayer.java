@@ -216,7 +216,7 @@ public final class ConnectFourClientSidePlayer
 	{
 		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
 		{
-			observer.handleTurnTimeoutCmnEvent(evt);
+			observer.handleUnauthorizedActionCmnEvent(evt);
 		}
 	}
 
