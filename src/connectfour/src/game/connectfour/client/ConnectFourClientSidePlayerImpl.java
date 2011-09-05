@@ -37,7 +37,7 @@ public final class ConnectFourClientSidePlayerImpl
 	 * @param localGameClient
 	 *            the {@link LocalGameClient}.
 	 */
-	protected ConnectFourClientSidePlayerImpl(final int iPlayerId,
+	public ConnectFourClientSidePlayerImpl(final int iPlayerId,
 			final String strName, final IGameServer server,
 			final LocalGameClient localGameClient)
 	{

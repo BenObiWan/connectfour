@@ -4,6 +4,7 @@ import game.connectfour.IConnectFourConfiguration;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.event.AbstractConnectFourGameEvent;
 import game.gameclient.AbstractClientGameCreator;
+import game.gameclient.LocalGameClient;
 
 /**
  * Client side creator for Connect Four game.
@@ -23,8 +24,10 @@ public final class ConnectFourClientGameCreator
 	}
 
 	@Override
-	public IConnectFourClientSidePlayer createPlayer(final int iPlayerId)
+	public IConnectFourClientSidePlayer createPlayer(
+			final LocalGameClient _locGameClient, final int iPlayerId)
 	{
-		return null;
+		return new ConnectFourClientSidePlayerImpl(iPlayerId, "", _gameServer,
+				_locGameClient);
 	}
 }
