@@ -27,7 +27,17 @@ public final class ConnectFourClientGameCreator
 	public IConnectFourClientSidePlayer createPlayer(
 			final LocalGameClient _locGameClient, final int iPlayerId)
 	{
-		return new ConnectFourClientSidePlayerImpl(iPlayerId, "", _gameServer,
-				_locGameClient);
+		String strPlayerName;
+		final String strAIName = _locGameClient.getAIName(iPlayerId);
+		if (strAIName == null)
+		{
+			strPlayerName = _gameClient.getName();
+		}
+		else
+		{
+			strPlayerName = strAIName + "@" + _gameClient.getName();
+		}
+		return new ConnectFourClientSidePlayerImpl(iPlayerId, strPlayerName,
+				_gameServer, _locGameClient);
 	}
 }
