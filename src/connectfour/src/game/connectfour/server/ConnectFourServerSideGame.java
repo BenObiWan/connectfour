@@ -1,6 +1,6 @@
 package game.connectfour.server;
 
-import game.common.IGameDescription;
+import game.common.IGameInstanceDescription;
 import game.common.IGameServer;
 import game.communication.action.ICommonGameAction;
 import game.communication.action.IGameAction;
@@ -92,7 +92,7 @@ public final class ConnectFourServerSideGame
 	}
 
 	@Override
-	public IGameDescription getDescription()
+	public IGameInstanceDescription getDescription()
 	{
 		// TODO ConnectFourServerSideGame getDescription
 		return null;

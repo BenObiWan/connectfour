@@ -1,7 +1,7 @@
 package game.connectfour.server;
 
 import game.common.IGameClient;
-import game.common.IGameDescription;
+import game.common.IGameInstanceDescription;
 import game.connectfour.IConnectFourConfiguration;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.action.AbstractConnectFourGameAction;
@@ -40,7 +40,7 @@ public final class ConnectFourServerGameCreator
 	}
 
 	@Override
-	public IGameDescription createGameDescription()
+	public IGameInstanceDescription createGameDescription()
 	{
 		return new ConnectFourGameDescription(getGameId(),
 				_creatorPlayer.getName(), _playerList.size());
