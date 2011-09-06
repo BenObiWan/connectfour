@@ -9,7 +9,7 @@ import game.common.IGameDescription;
  * @author benobiwan
  * 
  */
-public final class ConnectFourGameListDescription implements
+public final class ConnectFourGameDescription implements
 		IGameDescription
 {
 	@Override

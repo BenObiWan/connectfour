@@ -1,6 +1,6 @@
 package game.connectfour.server;
 
-import game.common.AbstractGameDescription;
+import game.common.AbstractGameInstanceDescription;
 
 /**
  * Description for a Connect four game, be it in creation or currently in play.
@@ -8,7 +8,7 @@ import game.common.AbstractGameDescription;
  * @author benobiwan
  * 
  */
-public final class ConnectFourGameDescription extends AbstractGameDescription
+public final class ConnectFourGameInstanceDescription extends AbstractGameInstanceDescription
 {
 	/**
 	 * serialVersionUID for Serialization.
@@ -25,7 +25,7 @@ public final class ConnectFourGameDescription extends AbstractGameDescription
 	 * @param iNumberOfPlayer
 	 *            the current number of player of this game.
 	 */
-	public ConnectFourGameDescription(final int iGameId,
+	public ConnectFourGameInstanceDescription(final int iGameId,
 			final String strCreatorName, final int iNumberOfPlayer)
 	{
 		super(iGameId, strCreatorName, iNumberOfPlayer);

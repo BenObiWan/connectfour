@@ -42,7 +42,7 @@ public final class ConnectFourServerGameCreator
 	@Override
 	public IGameInstanceDescription createGameDescription()
 	{
-		return new ConnectFourGameDescription(getGameId(),
+		return new ConnectFourGameInstanceDescription(getGameId(),
 				_creatorPlayer.getName(), _playerList.size());
 	}
 
