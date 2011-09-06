@@ -12,6 +12,7 @@ import game.communication.event.game.UnsupportedActionCmnEvent;
 import game.communication.event.game.YourTurnCmnEvent;
 import game.connectfour.ConnectFourBox;
 import game.connectfour.IConnectFourConfiguration;
+import game.connectfour.IConnectFourPlayer;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.event.AbstractConnectFourGameEvent;
 import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
@@ -19,12 +20,17 @@ import game.connectfour.event.ConnectFourGameEventType;
 import game.gameclient.AbstractClientSidePlayer;
 import game.gameclient.LocalGameClient;
 
-public final class ConnectFourClientSidePlayerImpl
+/**
+ * An interface describing a Player in the connect four game.
+ * 
+ * @author benobiwan
+ * 
+ */
+public class ConnectFourClientSidePlayer
 		extends
-		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourClientSidePlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
-		implements IConnectFourClientSidePlayer
+		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, ConnectFourClientSidePlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
+		implements IConnectFourPlayer
 {
-
 	/**
 	 * Creates a new ConnectFourClientSidePlayer.
 	 * 
@@ -37,7 +43,7 @@ public final class ConnectFourClientSidePlayerImpl
 	 * @param localGameClient
 	 *            the {@link LocalGameClient}.
 	 */
-	public ConnectFourClientSidePlayerImpl(final int iPlayerId,
+	public ConnectFourClientSidePlayer(final int iPlayerId,
 			final String strName, final IGameServer server,
 			final LocalGameClient localGameClient)
 	{

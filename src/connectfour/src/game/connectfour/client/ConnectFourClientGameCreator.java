@@ -14,7 +14,7 @@ import game.gameclient.LocalGameClient;
  */
 public final class ConnectFourClientGameCreator
 		extends
-		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayer, IConnectFourClientSidePlayerObserver>
+		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, ConnectFourClientSidePlayer, IConnectFourClientSidePlayerObserver>
 {
 	@Override
 	public ConnectFourClientSideGame createGame()
@@ -24,7 +24,7 @@ public final class ConnectFourClientGameCreator
 	}
 
 	@Override
-	public IConnectFourClientSidePlayer createPlayer(
+	public ConnectFourClientSidePlayer createPlayer(
 			final LocalGameClient _locGameClient, final int iPlayerId)
 	{
 		String strPlayerName;
@@ -37,7 +37,7 @@ public final class ConnectFourClientGameCreator
 		{
 			strPlayerName = strAIName + "@" + _gameClient.getName();
 		}
-		return new ConnectFourClientSidePlayerImpl(iPlayerId, strPlayerName,
+		return new ConnectFourClientSidePlayer(iPlayerId, strPlayerName,
 				_gameServer, _locGameClient);
 	}
 }
