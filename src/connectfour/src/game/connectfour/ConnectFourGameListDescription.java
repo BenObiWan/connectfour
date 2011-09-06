@@ -1,6 +1,6 @@
 package game.connectfour;
 
-import game.communication.IGameListDescription;
+import game.common.IGameListDescription;
 
 /**
  * Description of the connect four in the list of game available in the

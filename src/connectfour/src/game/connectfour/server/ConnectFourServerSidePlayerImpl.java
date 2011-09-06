@@ -1,6 +1,6 @@
 package game.connectfour.server;
 
-import game.communication.IGameClient;
+import game.common.IGameClient;
 import game.connectfour.ConnectFourBox;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.gameserver.AbstractServerSidePlayer;

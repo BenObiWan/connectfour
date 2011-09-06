@@ -1,6 +1,6 @@
 package game.connectfour.client;
 
-import game.communication.IGameServer;
+import game.common.IGameServer;
 import game.communication.event.CommonGameEventType;
 import game.communication.event.ICommonGameEvent;
 import game.communication.event.IGameEvent;

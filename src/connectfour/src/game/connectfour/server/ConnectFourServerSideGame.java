@@ -1,7 +1,7 @@
 package game.connectfour.server;
 
 import game.common.IGameDescription;
-import game.communication.IGameServer;
+import game.common.IGameServer;
 import game.communication.action.ICommonGameAction;
 import game.communication.action.IGameAction;
 import game.communication.action.IGameCtrlAction;

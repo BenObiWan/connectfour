@@ -1,6 +1,6 @@
 package game.connectfour.swing;
 
-import game.communication.IGameListDescription;
+import game.common.IGameListDescription;
 import game.connectfour.ConnectFourGameListDescription;
 import game.connectfour.client.ConnectFourClientGameCreator;
 import game.connectfour.server.ConnectFourServerGameCreator;
