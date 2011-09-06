@@ -8,7 +8,8 @@ import game.common.AbstractGameInstanceDescription;
  * @author benobiwan
  * 
  */
-public final class ConnectFourGameInstanceDescription extends AbstractGameInstanceDescription
+public final class ConnectFourGameInstanceDescription extends
+		AbstractGameInstanceDescription
 {
 	/**
 	 * serialVersionUID for Serialization.

@@ -9,8 +9,7 @@ import game.common.IGameDescription;
  * @author benobiwan
  * 
  */
-public final class ConnectFourGameDescription implements
-		IGameDescription
+public final class ConnectFourGameDescription implements IGameDescription
 {
 	@Override
 	public String toString()
