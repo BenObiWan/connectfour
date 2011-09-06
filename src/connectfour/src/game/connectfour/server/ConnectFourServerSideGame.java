@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ConnectFourServerSideGame
 		extends
-		AbstractServerSideGame<AbstractConnectFourGameAction, IConnectFourConfiguration, IConnectFourPlayerConfiguration, IConnectFourServerSidePlayer>
+		AbstractServerSideGame<AbstractConnectFourGameAction, IConnectFourConfiguration, IConnectFourPlayerConfiguration, ConnectFourServerSidePlayer>
 {
 	/**
 	 * Logger object.
@@ -66,9 +66,9 @@ public final class ConnectFourServerSideGame
 	public void handleGameAction(final IServerSidePlayer<?> player,
 			final IGameAction act) throws InconsistentActionTypeException
 	{
-		if (player instanceof IConnectFourServerSidePlayer)
+		if (player instanceof ConnectFourServerSidePlayer)
 		{
-			final IConnectFourServerSidePlayer connectFourPlayer = (IConnectFourServerSidePlayer) player;
+			final ConnectFourServerSidePlayer connectFourPlayer = (ConnectFourServerSidePlayer) player;
 			if (act instanceof AbstractConnectFourGameAction)
 			{
 				handleAction(connectFourPlayer,
@@ -117,7 +117,7 @@ public final class ConnectFourServerSideGame
 	 *             if the action type field and the class of the action object
 	 *             are inconsistent.
 	 */
-	private void handleAction(final IConnectFourServerSidePlayer player,
+	private void handleAction(final ConnectFourServerSidePlayer player,
 			final AbstractConnectFourGameAction act)
 			throws InconsistentActionTypeException
 	{
@@ -146,7 +146,7 @@ public final class ConnectFourServerSideGame
 	 *            the event to handle.
 	 */
 	@SuppressWarnings("unused")
-	private void handleAction(final IConnectFourServerSidePlayer player,
+	private void handleAction(final ConnectFourServerSidePlayer player,
 			final PlayColumnConnectFourGameAction act)
 	{
 		synchronized (_lockAction)

@@ -2,16 +2,23 @@ package game.connectfour.server;
 
 import game.common.IGameClient;
 import game.connectfour.ConnectFourBox;
+import game.connectfour.IConnectFourPlayer;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.gameserver.AbstractServerSidePlayer;
 import game.gameserver.IServerGameCreator;
 
-public final class ConnectFourServerSidePlayerImpl extends
+/**
+ * An interface describing a Player in the connect four game.
+ * 
+ * @author benobiwan
+ * 
+ */
+public final class ConnectFourServerSidePlayer extends
 		AbstractServerSidePlayer<IConnectFourPlayerConfiguration> implements
-		IConnectFourServerSidePlayer
+		IConnectFourPlayer
 {
 	/**
-	 * Creates a new ServerSideConnectFourPlayerImpl.
+	 * Creates a new ConnectFourServerSidePlayer.
 	 * 
 	 * @param iPlayerId
 	 *            the id of the player.
@@ -26,7 +33,7 @@ public final class ConnectFourServerSidePlayerImpl extends
 	 * @param conf
 	 *            the player configuration.
 	 */
-	public ConnectFourServerSidePlayerImpl(final int iPlayerId,
+	public ConnectFourServerSidePlayer(final int iPlayerId,
 			final IGameClient hostingClient, final String strName,
 			final boolean bIsAI,
 			final IServerGameCreator<?, ?, ?, ?, ?> serverGameCreator,
