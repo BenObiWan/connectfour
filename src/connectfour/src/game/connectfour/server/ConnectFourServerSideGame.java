@@ -15,7 +15,8 @@ import game.connectfour.action.PlayColumnConnectFourGameAction;
 import game.gameserver.AbstractServerSideGame;
 import game.gameserver.IServerSidePlayer;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Server side ConnectFour game.
@@ -30,7 +31,7 @@ public final class ConnectFourServerSideGame
 	/**
 	 * Logger object.
 	 */
-	private static final Logger LOGGER = Logger
+	private static final Logger LOGGER = LoggerFactory
 			.getLogger(ConnectFourServerSideGame.class);
 
 	/**

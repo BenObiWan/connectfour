@@ -8,7 +8,8 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Panel describing a Connect Four board.
@@ -26,7 +27,7 @@ public final class ConnectFourBoardPanel extends JPanel implements Observer
 	/**
 	 * Logger object.
 	 */
-	private static final Logger LOGGER = Logger
+	private static final Logger LOGGER = LoggerFactory
 			.getLogger(ConnectFourBoardPanel.class);
 
 	/**

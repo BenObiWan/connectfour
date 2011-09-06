@@ -17,7 +17,8 @@ import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
 import game.connectfour.event.ConnectFourGameEventType;
 import game.gameclient.AbstractClientSideGame;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Client side of the Connect Four game.
@@ -32,7 +33,7 @@ public final class ConnectFourClientSideGame
 	/**
 	 * Logger object.
 	 */
-	private static final Logger LOGGER = Logger
+	private static final Logger LOGGER = LoggerFactory
 			.getLogger(ConnectFourClientSideGame.class);
 
 	/**
