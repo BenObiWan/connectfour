@@ -1,6 +1,6 @@
 package game.connectfour;
 
-import game.common.IGameListDescription;
+import game.common.IGameDescription;
 
 /**
  * Description of the connect four in the list of game available in the
@@ -10,7 +10,7 @@ import game.common.IGameListDescription;
  * 
  */
 public final class ConnectFourGameListDescription implements
-		IGameListDescription
+		IGameDescription
 {
 	@Override
 	public String toString()
@@ -31,7 +31,7 @@ public final class ConnectFourGameListDescription implements
 	}
 
 	@Override
-	public int compareTo(final IGameListDescription description)
+	public int compareTo(final IGameDescription description)
 	{
 		int iRes = getName().compareTo(description.getName());
 		if (iRes == 0)

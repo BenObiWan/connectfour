@@ -1,6 +1,6 @@
 package game.connectfour.swing;
 
-import game.common.IGameListDescription;
+import game.common.IGameDescription;
 import game.connectfour.ConnectFourGameListDescription;
 import game.connectfour.client.ConnectFourClientGameCreator;
 import game.connectfour.server.ConnectFourServerGameCreator;
@@ -38,7 +38,7 @@ public final class ConnectFourGameSwingLauncher implements IGameSwingLauncher
 	}
 
 	@Override
-	public IGameListDescription getGameListDescription()
+	public IGameDescription getGameListDescription()
 	{
 		return _desc;
 	}
