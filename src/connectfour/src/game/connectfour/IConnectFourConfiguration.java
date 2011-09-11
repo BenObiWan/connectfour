@@ -15,6 +15,21 @@ public interface IConnectFourConfiguration extends
 		IConfigurationBranch
 {
 	/**
+	 * Tag of this configuration node.
+	 */
+	String CONNECT_FOUR_CONFIGURATION_TAG = "ConnectFour";
+
+	/**
+	 * Tag for the period between KeepAlive requests.
+	 */
+	String NUMBER_OF_ROW_TAG = "NumberOfRows";
+
+	/**
+	 * Tag for the KeepAlive request timeout before closing the connection.
+	 */
+	String NUMBER_OF_COLUMN_TAG = "NumberOfColumns";
+
+	/**
 	 * Number of rows of this connect four game.
 	 * 
 	 * @return the number of rows of this connect four game.
