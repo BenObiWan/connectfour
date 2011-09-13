@@ -30,16 +30,13 @@ public final class ConnectFourServerSidePlayer extends
 	 *            whether this player is an AI or not.
 	 * @param serverGameCreator
 	 *            the {@link IServerGameCreator} which created this game.
-	 * @param conf
-	 *            the player configuration.
 	 */
 	public ConnectFourServerSidePlayer(final int iPlayerId,
 			final IGameClient hostingClient, final String strName,
 			final boolean bIsAI,
-			final IServerGameCreator<?, ?, ?, ?, ?> serverGameCreator,
-			final IConnectFourPlayerConfiguration conf)
+			final IServerGameCreator<?, ?, ?, ?, ?> serverGameCreator)
 	{
-		super(iPlayerId, hostingClient, strName, bIsAI, serverGameCreator, conf);
+		super(iPlayerId, hostingClient, strName, bIsAI, serverGameCreator);
 	}
 
 	@Override

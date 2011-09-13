@@ -40,4 +40,18 @@ public final class ConnectFourClientGameCreator
 		return new ConnectFourClientSidePlayer(iPlayerId, strPlayerName,
 				_gameServer, _locGameClient);
 	}
+	
+	@Override
+	public IConnectFourPlayerConfiguration createPlayerConfiguration()
+	{
+		// TODO createPlayerConfiguration
+		return null;
+	}
+
+	@Override
+	public IConnectFourConfiguration createGameConfiguration()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

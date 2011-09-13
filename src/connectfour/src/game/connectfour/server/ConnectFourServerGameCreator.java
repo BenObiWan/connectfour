@@ -34,9 +34,8 @@ public final class ConnectFourServerGameCreator
 	public ConnectFourServerSidePlayer createPlayer(
 			final IGameClient hostingClient, final int iPlayerId)
 	{
-		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
 		return new ConnectFourServerSidePlayer(iPlayerId, hostingClient,
-				hostingClient.getName(), false, this, conf);
+				hostingClient.getName(), false, this);
 	}
 
 	@Override
@@ -51,15 +50,7 @@ public final class ConnectFourServerGameCreator
 			final IGameClient hostingClient, final int iPlayerId,
 			final String strPlayerName)
 	{
-		final IConnectFourPlayerConfiguration conf = createPlayerConfiguration();
 		return new ConnectFourServerSidePlayer(iPlayerId, hostingClient,
-				strPlayerName, true, this, conf);
-	}
-
-	@Override
-	public IConnectFourPlayerConfiguration createPlayerConfiguration()
-	{
-		// TODO createPlayerConfiguration
-		return null;
+				strPlayerName, true, this);
 	}
 }
