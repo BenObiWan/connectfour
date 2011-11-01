@@ -42,12 +42,16 @@ public class ConnectFourClientSidePlayer
 	 *            the {@link IGameServer} where this client is playing.
 	 * @param localGameClient
 	 *            the {@link LocalGameClient}.
+	 * @param gameCreator
+	 *            the {@link ConnectFourClientGameCreator} which created this
+	 *            player.
 	 */
 	public ConnectFourClientSidePlayer(final int iPlayerId,
 			final String strName, final IGameServer server,
-			final LocalGameClient localGameClient)
+			final LocalGameClient localGameClient,
+			final ConnectFourClientGameCreator gameCreator)
 	{
-		super(iPlayerId, strName, server, localGameClient);
+		super(iPlayerId, strName, server, localGameClient, gameCreator);
 	}
 
 	@Override

@@ -38,9 +38,9 @@ public final class ConnectFourClientGameCreator
 			strPlayerName = strAIName + "@" + _gameClient.getName();
 		}
 		return new ConnectFourClientSidePlayer(iPlayerId, strPlayerName,
-				_gameServer, _locGameClient);
+				_gameServer, _locGameClient, this);
 	}
-	
+
 	@Override
 	public IConnectFourPlayerConfiguration createPlayerConfiguration()
 	{
