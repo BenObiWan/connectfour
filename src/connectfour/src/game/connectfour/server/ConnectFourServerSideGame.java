@@ -1,12 +1,16 @@
 package game.connectfour.server;
 
+import game.common.IGameClient;
 import game.common.IGameInstanceDescription;
 import game.common.IGameServer;
 import game.communication.action.ICommonGameAction;
 import game.communication.action.IGameAction;
-import game.communication.action.IGameCtrlAction;
 import game.communication.action.InconsistentActionTypeException;
 import game.communication.action.game.EndTurnCmnAction;
+import game.communication.action.gamectrl.AddAICrAction;
+import game.communication.action.gamectrl.JoinGameCrAction;
+import game.communication.action.gamectrl.KickPlayerCrAction;
+import game.communication.action.gamectrl.LeaveGameCrAction;
 import game.connectfour.IConnectFourConfiguration;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.action.AbstractConnectFourGameAction;
@@ -157,7 +161,7 @@ public final class ConnectFourServerSideGame
 	}
 
 	@Override
-	public void handleAction(final IServerSidePlayer<?> player,
+	public void handleEndTurnCmnAction(final IServerSidePlayer<?> player,
 			final EndTurnCmnAction act)
 	{
 		// TODO ConnectFourServerSideGame handleAction
@@ -171,8 +175,32 @@ public final class ConnectFourServerSideGame
 	}
 
 	@Override
-	public void handleGameCtrlAction(final IServerSidePlayer<?> player,
-			final IGameCtrlAction act) throws InconsistentActionTypeException
+	public void handleAddAIGameCrAction(final IServerSidePlayer<?> player,
+			final AddAICrAction act)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void handleJoinGameCrAction(final IGameClient client,
+			final JoinGameCrAction act)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void handleKickPlayerGameCrAction(final IServerSidePlayer<?> player,
+			final KickPlayerCrAction act)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void handleLeaveGameCrAction(final IServerSidePlayer<?> player,
+			final LeaveGameCrAction act)
 	{
 		// TODO Auto-generated method stub
 
