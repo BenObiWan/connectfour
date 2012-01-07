@@ -1,10 +1,12 @@
 package game.connectfour.client;
 
 import game.connectfour.event.ColumnPlayedConnectFourGameEvent;
-import game.gameclient.IClientSidePlayerObserver;
+import game.gameclient.IClientSidePlayerChangeListener;
 
-public interface IConnectFourClientSidePlayerObserver extends
-		IClientSidePlayerObserver
+import com.google.common.eventbus.Subscribe;
+
+public interface IConnectFourClientSidePlayerChangeListener extends
+		IClientSidePlayerChangeListener
 {
 	/**
 	 * Handle a {@link ColumnPlayedConnectFourGameEvent}.
@@ -12,6 +14,7 @@ public interface IConnectFourClientSidePlayerObserver extends
 	 * @param evt
 	 *            the {@link ColumnPlayedConnectFourGameEvent} to handle.
 	 */
+	@Subscribe
 	void handleColumnPlayedConnectFourGameEvent(
 			ColumnPlayedConnectFourGameEvent evt);
 }

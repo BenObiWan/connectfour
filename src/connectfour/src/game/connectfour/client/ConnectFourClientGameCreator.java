@@ -14,7 +14,7 @@ import game.gameclient.LocalGameClient;
  */
 public final class ConnectFourClientGameCreator
 		extends
-		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, ConnectFourClientSidePlayer, IConnectFourClientSidePlayerObserver>
+		AbstractClientGameCreator<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, IConnectFourPlayerConfiguration, ConnectFourClientSidePlayer, IConnectFourClientSidePlayerChangeListener>
 {
 	@Override
 	public ConnectFourClientSideGame createGame()

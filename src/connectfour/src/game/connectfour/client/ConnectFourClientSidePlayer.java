@@ -28,7 +28,7 @@ import game.gameclient.LocalGameClient;
  */
 public class ConnectFourClientSidePlayer
 		extends
-		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, ConnectFourClientSidePlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerObserver>
+		AbstractClientSidePlayer<IConnectFourConfiguration, AbstractConnectFourGameEvent, ConnectFourClientSideGame, ConnectFourClientSidePlayer, IConnectFourPlayerConfiguration, IConnectFourClientSidePlayerChangeListener>
 		implements IConnectFourPlayer
 {
 	/**
@@ -191,19 +191,14 @@ public class ConnectFourClientSidePlayer
 	@Override
 	public void handleYourTurnCmnEvent(final YourTurnCmnEvent evt)
 	{
-		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
-		{
-			observer.handleYourTurnCmnEvent(evt);
-		}
+		_eventBus.post(evt);
 	}
 
 	@Override
 	public void handleTurnTimeoutCmnEvent(final TurnTimeoutCmnEvent evt)
 	{
-		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
-		{
-			observer.handleTurnTimeoutCmnEvent(evt);
-		}
+		_eventBus.post(evt);
+
 	}
 
 	/**
@@ -214,29 +209,21 @@ public class ConnectFourClientSidePlayer
 	 */
 	private void handleTurnTimeoutCmnEvent(final UnauthorizedActionCmnEvent evt)
 	{
-		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
-		{
-			observer.handleUnauthorizedActionCmnEvent(evt);
-		}
+		_eventBus.post(evt);
+
 	}
 
 	@Override
 	public void handleCanActCmnEvent(final CantActCmnEvent evt)
 	{
-		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
-		{
-			observer.handleCanActCmnEvent(evt);
-		}
+		_eventBus.post(evt);
 	}
 
 	@Override
 	public void handleUnsupportedActionCmnEvent(
 			final UnsupportedActionCmnEvent evt)
 	{
-		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
-		{
-			observer.handleUnsupportedActionCmnEvent(evt);
-		}
+		_eventBus.post(evt);
 	}
 
 	/**
@@ -248,10 +235,7 @@ public class ConnectFourClientSidePlayer
 	private void handleColumnPlayedConnectFourGameEvent(
 			final ColumnPlayedConnectFourGameEvent evt)
 	{
-		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
-		{
-			observer.handleColumnPlayedConnectFourGameEvent(evt);
-		}
+		_eventBus.post(evt);
 	}
 
 	@Override
