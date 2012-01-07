@@ -188,13 +188,8 @@ public class ConnectFourClientSidePlayer
 		}
 	}
 
-	/**
-	 * Handle a {@link YourTurnCmnEvent}.
-	 * 
-	 * @param evt
-	 *            the {@link YourTurnCmnEvent} to handle.
-	 */
-	private void handleYourTurnCmnEvent(final YourTurnCmnEvent evt)
+	@Override
+	public void handleYourTurnCmnEvent(final YourTurnCmnEvent evt)
 	{
 		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
 		{
@@ -202,13 +197,8 @@ public class ConnectFourClientSidePlayer
 		}
 	}
 
-	/**
-	 * Handle a {@link TurnTimeoutCmnEvent}.
-	 * 
-	 * @param evt
-	 *            the {@link TurnTimeoutCmnEvent} to handle.
-	 */
-	private void handleTurnTimeoutCmnEvent(final TurnTimeoutCmnEvent evt)
+	@Override
+	public void handleTurnTimeoutCmnEvent(final TurnTimeoutCmnEvent evt)
 	{
 		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
 		{
@@ -230,13 +220,8 @@ public class ConnectFourClientSidePlayer
 		}
 	}
 
-	/**
-	 * Handle a {@link CantActCmnEvent}.
-	 * 
-	 * @param evt
-	 *            the {@link CantActCmnEvent} to handle.
-	 */
-	private void handleCanActCmnEvent(final CantActCmnEvent evt)
+	@Override
+	public void handleCanActCmnEvent(final CantActCmnEvent evt)
 	{
 		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
 		{
@@ -244,13 +229,8 @@ public class ConnectFourClientSidePlayer
 		}
 	}
 
-	/**
-	 * Handle a {@link UnsupportedActionCmnEvent}.
-	 * 
-	 * @param evt
-	 *            the {@link UnsupportedActionCmnEvent} to handle.
-	 */
-	private void handleUnsupportedActionCmnEvent(
+	@Override
+	public void handleUnsupportedActionCmnEvent(
 			final UnsupportedActionCmnEvent evt)
 	{
 		for (final IConnectFourClientSidePlayerObserver observer : _observerList)
@@ -272,5 +252,12 @@ public class ConnectFourClientSidePlayer
 		{
 			observer.handleColumnPlayedConnectFourGameEvent(evt);
 		}
+	}
+
+	@Override
+	public void handleUnauthorizedActionCmnEvent(
+			final UnauthorizedActionCmnEvent evt)
+	{
+		// TODO Auto-generated method stub
 	}
 }
