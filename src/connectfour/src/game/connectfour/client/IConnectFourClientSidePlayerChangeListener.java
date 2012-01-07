@@ -5,6 +5,12 @@ import game.gameclient.IClientSidePlayerChangeListener;
 
 import com.google.common.eventbus.Subscribe;
 
+/**
+ * Interface describing a change listener for connect four client side player.
+ * 
+ * @author benobiwan
+ * 
+ */
 public interface IConnectFourClientSidePlayerChangeListener extends
 		IClientSidePlayerChangeListener
 {
