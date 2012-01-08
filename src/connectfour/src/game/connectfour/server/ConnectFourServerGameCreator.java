@@ -21,7 +21,11 @@ public final class ConnectFourServerGameCreator
 	@Override
 	public ConnectFourServerSideGame createGame()
 	{
-		return new ConnectFourServerSideGame(_gameServer, _iGameId, _conf);
+		if (_conf != null)
+		{
+			return new ConnectFourServerSideGame(_gameServer, _iGameId, _conf);
+		}
+		return null;
 	}
 
 	@Override

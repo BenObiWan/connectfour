@@ -1,5 +1,6 @@
 package game.connectfour.client;
 
+import game.connectfour.ConnectFourConfigurationImpl;
 import game.connectfour.IConnectFourConfiguration;
 import game.connectfour.IConnectFourPlayerConfiguration;
 import game.connectfour.event.AbstractConnectFourGameEvent;
@@ -51,7 +52,6 @@ public final class ConnectFourClientGameCreator
 	@Override
 	public IConnectFourConfiguration createGameConfiguration()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return new ConnectFourConfigurationImpl(null, null);
 	}
 }
