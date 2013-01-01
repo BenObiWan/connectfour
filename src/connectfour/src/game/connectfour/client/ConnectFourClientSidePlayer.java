@@ -113,7 +113,7 @@ public class ConnectFourClientSidePlayer
 		case UNAUTHORIZED_ACTION:
 			if (evt instanceof UnauthorizedActionCmnEvent)
 			{
-				handleTurnTimeoutCmnEvent((UnauthorizedActionCmnEvent) evt);
+				handleUnauthorizedActionCmnEvent((UnauthorizedActionCmnEvent) evt);
 			}
 			else
 			{
@@ -201,13 +201,9 @@ public class ConnectFourClientSidePlayer
 
 	}
 
-	/**
-	 * Handle a {@link UnauthorizedActionCmnEvent}.
-	 * 
-	 * @param evt
-	 *            the {@link UnauthorizedActionCmnEvent} to handle.
-	 */
-	private void handleTurnTimeoutCmnEvent(final UnauthorizedActionCmnEvent evt)
+	@Override
+	public void handleUnauthorizedActionCmnEvent(
+			final UnauthorizedActionCmnEvent evt)
 	{
 		_eventBus.post(evt);
 
@@ -236,12 +232,6 @@ public class ConnectFourClientSidePlayer
 			final ColumnPlayedConnectFourGameEvent evt)
 	{
 		_eventBus.post(evt);
-	}
 
-	@Override
-	public void handleUnauthorizedActionCmnEvent(
-			final UnauthorizedActionCmnEvent evt)
-	{
-		// TODO Auto-generated method stub
 	}
 }
