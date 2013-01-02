@@ -3,7 +3,7 @@ package game.connectfour.client;
 import game.common.IGameClient;
 import game.common.IGameServer;
 import game.communication.event.ICommonGameEvent;
-import game.communication.event.IGameEvent;
+import game.communication.event.IUniCastGameEvent;
 import game.communication.event.InconsistentEventTypeException;
 import game.communication.event.game.CantActCmnEvent;
 import game.communication.event.game.TurnTimeoutCmnEvent;
@@ -68,7 +68,7 @@ public final class ConnectFourClientSideGame
 	}
 
 	@Override
-	public void handleEvent(final IGameEvent evt)
+	public void handleEvent(final IUniCastGameEvent evt)
 			throws InconsistentEventTypeException
 	{
 		if (evt instanceof AbstractConnectFourGameEvent)
