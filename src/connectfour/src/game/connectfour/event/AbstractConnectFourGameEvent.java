@@ -1,6 +1,6 @@
 package game.connectfour.event;
 
-import game.communication.event.AbstractGameEvent;
+import game.communication.event.AbstractUniCastGameEvent;
 import game.communication.event.IUniCastGameEvent;
 
 /**
@@ -9,7 +9,7 @@ import game.communication.event.IUniCastGameEvent;
  * @author benobiwan
  * 
  */
-public abstract class AbstractConnectFourGameEvent extends AbstractGameEvent
+public abstract class AbstractConnectFourGameEvent extends AbstractUniCastGameEvent
 {
 
 	/**
