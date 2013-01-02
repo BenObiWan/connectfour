@@ -9,7 +9,8 @@ import game.communication.event.IUniCastGameEvent;
  * @author benobiwan
  * 
  */
-public abstract class AbstractConnectFourGameEvent extends AbstractUniCastGameEvent
+public abstract class AbstractConnectFourGameEvent extends
+		AbstractUniCastGameEvent
 {
 
 	/**
